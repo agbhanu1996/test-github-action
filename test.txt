@@ -1,0 +1,2 @@
+aws_host=aws_host
+aws_port=aws_port
