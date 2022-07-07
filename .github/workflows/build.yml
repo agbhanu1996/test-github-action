@@ -1,0 +1,42 @@
+name: container
+on: push
+
+
+jobs:
+  job-name:
+    runs-on: ubuntu-latest
+    services:
+      node-container:
+        image: node:14.15.0-alpine3.12
+
+      git-container:
+        image: alpine/git
+
+    steps:
+         - uses: actions/checkout@v2
+
+         - name: list file names
+           run: |
+             ls -lrt
+             git --version
+
+         - name: Log the node version
+           run: |
+             node -v
+
+# jobs:
+#   node-docker:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: node:14.15.0-alpine3.12
+#     steps:
+#          - uses: actions/checkout@v2
+
+#          - name: list file names
+#            run: |
+#              ls -lrt
+
+#          - name: Log the node version
+#            run: |
+#              node -v
+#              cat /etc/os-release  
