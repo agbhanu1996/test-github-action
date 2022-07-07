@@ -51,3 +51,17 @@ jobs:
              pwd
              ls -lrt
              echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+
+         - name: Create and populate test file
+           run: |
+             touch test1.txt
+             echo aws_host="aws_host" >> test1.txt
+             echo aws_port="aws_port" >> test1.txt
+             cat test1.txt
+            
+         - name: Commit changes made to .bitmap
+           uses: EndBug/add-and-commit@v9
+           with:
+             add: .
+             author_name: ${{ github.actor }}
+             message: 'updated test1.txt'
