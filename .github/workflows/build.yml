@@ -63,5 +63,6 @@ jobs:
            uses: EndBug/add-and-commit@v9
            with:
              add: .
+             cwd: '/home/runner/work/test-github-action/test-github-action'
              author_name: ${{ github.actor }}
              message: 'updated test1.txt'
