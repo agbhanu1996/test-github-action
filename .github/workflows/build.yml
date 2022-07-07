@@ -50,3 +50,4 @@ jobs:
            run: |
              pwd
              ls -lrt
+             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
